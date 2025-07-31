@@ -1,0 +1,1378 @@
+
+> ets-aero-iso-backend@0.1.0 dev
+> nodemon
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/jasontaylor/ISO-13-JUL/agentic-iso/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:149:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at phase4 (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:649:14)
+    at bootstrap (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:95:10) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+🚀 Agentic ISO Backend running on port 3001
+Environment: development
+Database: Configured
+(node:53985) NOTE: The AWS SDK for JavaScript (v2) is in maintenance mode.
+ SDK releases are limited to address critical bug fixes and security issues only.
+
+Please migrate your code to use AWS SDK for JavaScript (v3).
+For more information, check the blog post at https://a.co/cUPnyil
+(Use `node --trace-warnings ...` to show where the warning was created)
+🌐 GET /auth/profile - 2025-07-29T23:29:39.713Z
+🌐 GET /organizations/users - 2025-07-29T23:29:39.835Z
+🌐 GET /tasks/calendar - 2025-07-29T23:29:39.836Z
+🌐 GET /auth/profile - 2025-07-29T23:29:43.944Z
+🌐 GET /tasks/calendar - 2025-07-29T23:29:43.980Z
+🌐 GET /organizations/users - 2025-07-29T23:29:43.980Z
+🌐 GET /auth/profile - 2025-07-29T23:38:09.332Z
+🌐 GET /tasks/calendar - 2025-07-29T23:38:09.664Z
+🌐 GET /organizations/users - 2025-07-29T23:38:09.665Z
+🌐 GET /organizations/users - 2025-07-29T23:38:16.874Z
+🌐 GET /tasks/calendar - 2025-07-29T23:38:16.877Z
+🌐 POST /tasks - 2025-07-29T23:38:59.488Z
+🌐 GET /tasks/calendar - 2025-07-29T23:38:59.513Z
+🌐 PUT /tasks/cmdp6hq1w00011h9xu3yaagsw - 2025-07-29T23:39:10.992Z
+🌐 GET /dashboard/fuel-burn-comparison - 2025-07-30T08:15:42.122Z
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/jasontaylor/ISO-13-JUL/agentic-iso/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:149:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at phase4 (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:649:14)
+    at bootstrap (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:95:10) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/jasontaylor/ISO-13-JUL/agentic-iso/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:150:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at phase4 (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:649:14)
+    at bootstrap (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:95:10) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(3,24): error TS2307: Cannot find module '../lib/prisma' or its corresponding type declarations.
+src/routes/master-document-list.ts(4,24): error TS2307: Cannot find module '../lib/logger' or its corresponding type declarations.
+src/routes/master-document-list.ts(5,10): error TS2305: Module '"@prisma/client"' has no exported member 'ISOVersion'.
+src/routes/master-document-list.ts(105,72): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(108,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(133,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(236,23): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(238,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2307, 2307,
+    2305, 7006, 7006,
+    7006, 7006, 7006
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(3,24): error TS2307: Cannot find module '../lib/prisma' or its corresponding type declarations.
+src/routes/master-document-list.ts(4,24): error TS2307: Cannot find module '../lib/logger' or its corresponding type declarations.
+src/routes/master-document-list.ts(5,10): error TS2305: Module '"@prisma/client"' has no exported member 'ISOVersion'.
+src/routes/master-document-list.ts(105,72): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(108,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(133,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(236,23): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(238,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2307, 2307,
+    2305, 7006, 7006,
+    7006, 7006, 7006
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(25,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(47,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(56,29): error TS2304: Cannot find name 'prisma'.
+src/routes/master-document-list.ts(103,72): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(106,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(107,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(109,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(111,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(131,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(140,11): error TS2304: Cannot find name 'prisma'.
+src/routes/master-document-list.ts(169,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(194,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(195,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(202,29): error TS2304: Cannot find name 'prisma'.
+src/routes/master-document-list.ts(234,23): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(236,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(237,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(239,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(241,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(266,11): error TS2304: Cannot find name 'prisma'.
+src/routes/master-document-list.ts(288,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2304, 2304, 2304, 2304,
+    2304, 7006, 7006, 2304, 2304,
+    2304, 7006, 2304, 2304, 2304,
+    2304, 2304, 2304, 7006, 7006,
+    2304, 2304, 2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(107,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,28): error TS2339: Property 'isoVersion' does not exist on type '{ id: string; description: string | null; title: string; clauseNumber: string; standard: StandardType; parentId: string | null; }'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,35): error TS2339: Property 'isoVersion' does not exist on type '{ id: string; description: string | null; title: string; clauseNumber: string; standard: StandardType; parentId: string | null; }'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,35): error TS2339: Property 'isoVersion' does not exist on type '{ id: string; description: string | null; title: string; clauseNumber: string; standard: StandardType; parentId: string | null; }'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2304, 2304, 2304, 2304,
+    2353, 2339, 7006, 2304, 2304,
+    2304, 2339, 2551, 2551, 2551,
+    2339, 7006, 2304, 2304, 2304,
+    2304, 2339, 2304, 2339, 2304,
+    2339, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2304, 2304, 2304,
+    2304, 2353, 2339, 2304,
+    2304, 2304, 2339, 2551,
+    2551, 2551, 2339, 7006,
+    2304, 2304, 2304, 2304,
+    2304, 2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(31,17): error TS2304: Cannot find name 'requireAuth'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(179,27): error TS2304: Cannot find name 'requireAuth'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2304, 2304, 2304, 2304, 2304,
+    2353, 2339, 2304, 2304, 2304,
+    2339, 2551, 2551, 2551, 2339,
+    7006, 2304, 2304, 2304, 2304,
+    2304, 2304, 2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(179,27): error TS2304: Cannot find name 'requireAuth'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2304, 2304, 2304, 2304,
+    2353, 2339, 2304, 2304,
+    2304, 2339, 2551, 2551,
+    2551, 2339, 7006, 2304,
+    2304, 2304, 2304, 2304,
+    2304, 2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+(node:53745) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 exit listeners added to [Bus]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2304, 2304, 2304, 2304,
+    2353, 2339, 2304, 2304,
+    2304, 2339, 2551, 2551,
+    2551, 2339, 7006, 2304,
+    2304, 2304, 2304, 2304,
+    2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2304, 2304, 2304, 2353,
+    2339, 2304, 2304, 2304,
+    2339, 2551, 2551, 2551,
+    2339, 7006, 2304, 2304,
+    2304, 2304, 2304, 2304,
+    2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2353, 2339, 2339,
+    2551, 2551, 2551,
+    2339, 7006, 2304,
+    2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2353, 2339, 2339,
+    2551, 2551, 2551,
+    2339, 7006
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(135,38): error TS2339: Property 'isoVersion' does not exist on type '{ title: string; clauseNumber: string; standard: StandardType; }'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [ 2339 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+🚀 Agentic ISO Backend running on port 3001
+Environment: development
+Database: Configured
+(node:87725) NOTE: The AWS SDK for JavaScript (v2) is in maintenance mode.
+ SDK releases are limited to address critical bug fixes and security issues only.
+
+Please migrate your code to use AWS SDK for JavaScript (v3).
+For more information, check the blog post at https://a.co/cUPnyil
+(Use `node --trace-warnings ...` to show where the warning was created)
+🌐 GET /dashboard/fuel-burn-comparison - 2025-07-30T13:17:37.333Z
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/jasontaylor/ISO-13-JUL/agentic-iso/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:149:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at phase4 (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:649:14)
+    at bootstrap (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:95:10) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+🚀 Agentic ISO Backend running on port 3001
+Environment: development
+Database: Configured
+(node:85569) NOTE: The AWS SDK for JavaScript (v2) is in maintenance mode.
+ SDK releases are limited to address critical bug fixes and security issues only.
+
+Please migrate your code to use AWS SDK for JavaScript (v3).
+For more information, check the blog post at https://a.co/cUPnyil
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+🚀 Agentic ISO Backend running on port 3001
+Environment: development
+Database: Configured
+(node:85715) NOTE: The AWS SDK for JavaScript (v2) is in maintenance mode.
+ SDK releases are limited to address critical bug fixes and security issues only.
+
+Please migrate your code to use AWS SDK for JavaScript (v3).
+For more information, check the blog post at https://a.co/cUPnyil
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(3,24): error TS2307: Cannot find module '../lib/prisma' or its corresponding type declarations.
+src/routes/master-document-list.ts(4,24): error TS2307: Cannot find module '../lib/logger' or its corresponding type declarations.
+src/routes/master-document-list.ts(5,10): error TS2305: Module '"@prisma/client"' has no exported member 'ISOVersion'.
+src/routes/master-document-list.ts(105,72): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(108,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(133,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(236,23): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(238,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2307, 2307,
+    2305, 7006, 7006,
+    7006, 7006, 7006
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(3,24): error TS2307: Cannot find module '../lib/prisma' or its corresponding type declarations.
+src/routes/master-document-list.ts(4,24): error TS2307: Cannot find module '../lib/logger' or its corresponding type declarations.
+src/routes/master-document-list.ts(5,10): error TS2305: Module '"@prisma/client"' has no exported member 'ISOVersion'.
+src/routes/master-document-list.ts(105,72): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(108,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(133,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(236,23): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(238,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2307, 2307,
+    2305, 7006, 7006,
+    7006, 7006, 7006
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(25,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(47,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(56,29): error TS2304: Cannot find name 'prisma'.
+src/routes/master-document-list.ts(103,72): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(106,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(107,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(109,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(111,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(131,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(140,11): error TS2304: Cannot find name 'prisma'.
+src/routes/master-document-list.ts(169,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(194,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(195,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(202,29): error TS2304: Cannot find name 'prisma'.
+src/routes/master-document-list.ts(234,23): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+src/routes/master-document-list.ts(236,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(237,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(239,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(241,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(266,11): error TS2304: Cannot find name 'prisma'.
+src/routes/master-document-list.ts(288,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2304, 2304, 2304, 2304,
+    2304, 7006, 7006, 2304, 2304,
+    2304, 7006, 2304, 2304, 2304,
+    2304, 2304, 2304, 7006, 7006,
+    2304, 2304, 2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(107,34): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,28): error TS2339: Property 'isoVersion' does not exist on type '{ id: string; description: string | null; title: string; clauseNumber: string; standard: StandardType; parentId: string | null; }'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,35): error TS2339: Property 'isoVersion' does not exist on type '{ id: string; description: string | null; title: string; clauseNumber: string; standard: StandardType; parentId: string | null; }'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,35): error TS2339: Property 'isoVersion' does not exist on type '{ id: string; description: string | null; title: string; clauseNumber: string; standard: StandardType; parentId: string | null; }'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2304, 2304, 2304, 2304,
+    2353, 2339, 7006, 2304, 2304,
+    2304, 2339, 2551, 2551, 2551,
+    2339, 7006, 2304, 2304, 2304,
+    2304, 2339, 2304, 2339, 2304,
+    2339, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(2,10): error TS2305: Module '"../middleware/auth"' has no exported member 'requireAuth'.
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2305, 2304, 2304, 2304,
+    2304, 2353, 2339, 2304,
+    2304, 2304, 2339, 2551,
+    2551, 2551, 2339, 7006,
+    2304, 2304, 2304, 2304,
+    2304, 2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(31,17): error TS2304: Cannot find name 'requireAuth'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(179,27): error TS2304: Cannot find name 'requireAuth'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2304, 2304, 2304, 2304, 2304,
+    2353, 2339, 2304, 2304, 2304,
+    2339, 2551, 2551, 2551, 2339,
+    7006, 2304, 2304, 2304, 2304,
+    2304, 2304, 2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(179,27): error TS2304: Cannot find name 'requireAuth'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2304, 2304, 2304, 2304,
+    2353, 2339, 2304, 2304,
+    2304, 2339, 2551, 2551,
+    2551, 2339, 7006, 2304,
+    2304, 2304, 2304, 2304,
+    2304, 2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(26,17): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2304, 2304, 2304, 2304,
+    2353, 2339, 2304, 2304,
+    2304, 2339, 2551, 2551,
+    2551, 2339, 7006, 2304,
+    2304, 2304, 2304, 2304,
+    2304, 2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(48,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(49,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(108,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(110,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(112,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(195,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,20): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(196,47): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(238,43): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(240,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(242,50): error TS2304: Cannot find name 'ISOVersion'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2304, 2304, 2304, 2353,
+    2339, 2304, 2304, 2304,
+    2339, 2551, 2551, 2551,
+    2339, 7006, 2304, 2304,
+    2304, 2304, 2304, 2304,
+    2304, 2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+(node:45498) MaxListenersExceededWarning: Possible EventEmitter memory leak detected. 11 exit listeners added to [Bus]. MaxListeners is 10. Use emitter.setMaxListeners() to increase limit
+(Use `node --trace-warnings ...` to show where the warning was created)
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+src/routes/master-document-list.ts(170,5): error TS2304: Cannot find name 'logger'.
+src/routes/master-document-list.ts(289,5): error TS2304: Cannot find name 'logger'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2353, 2339, 2339,
+    2551, 2551, 2551,
+    2339, 7006, 2304,
+    2304
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(81,17): error TS2353: Object literal may only specify known properties, and 'code' does not exist in type 'ISOClauseSelect<DefaultArgs>'.
+src/routes/master-document-list.ts(107,11): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(124,27): error TS2339: Property 'reviews' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(127,19): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(128,21): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(129,22): error TS2551: Property 'owner' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'. Did you mean 'ownerId'?
+src/routes/master-document-list.ts(132,29): error TS2339: Property 'clauseMappings' does not exist on type '{ id: string; createdAt: Date; updatedAt: Date; organizationId: string | null; description: string | null; status: ArtefactStatus; title: string; metadata: JsonValue; currentVersion: number; fileUrl: string | null; ownerId: string; }'.
+src/routes/master-document-list.ts(132,48): error TS7006: Parameter 'mapping' implicitly has an 'any' type.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [
+    2353, 2339, 2339,
+    2551, 2551, 2551,
+    2339, 7006
+  ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/master-document-list.ts(135,38): error TS2339: Property 'isoVersion' does not exist on type '{ title: string; clauseNumber: string; standard: StandardType; }'.
+
+    at createTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Module.require (node:internal/modules/cjs/loader:1340:12)
+    at require (node:internal/modules/helpers:138:16)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:17:1)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23) {
+  diagnosticCodes: [ 2339 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/index.ts`[39m
+Error: listen EADDRINUSE: address already in use :::3001
+    at Server.setupListenHandle [as _listen2] (node:net:1912:16)
+    at listenInCluster (node:net:1969:12)
+    at Server.listen (node:net:2074:7)
+    at Function.listen (/Users/jasontaylor/ISO-13-JUL/agentic-iso/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/src/index.ts:152:5)
+    at Module._compile (node:internal/modules/cjs/loader:1565:14)
+    at Module.m._compile (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1708:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1318:32)
+    at Function._load (node:internal/modules/cjs/loader:1128:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:219:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:170:5)
+    at phase4 (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:649:14)
+    at bootstrap (/Users/jasontaylor/ISO-13-JUL/agentic-iso/backend/node_modules/ts-node/src/bin.ts:95:10) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m

@@ -1,308 +1,333 @@
 import { Router } from 'express';
 import multer from 'multer';
-import path from 'path';
-import fs from 'fs';
-import Artefact from '../models/Artefact';
-import User from '../models/User';
+import { ArtefactService } from '../services/artefact.service';
+import { authenticateToken, requireRole } from '../middleware/auth';
+import { UserRole } from '@prisma/client';
 
 const router = Router();
+const artefactService = new ArtefactService();
 
 // Configure multer for file uploads
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const uploadDir = path.join(__dirname, '../../uploads');
-    // Create uploads directory if it doesn't exist
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true });
-    }
-    cb(null, uploadDir);
-  },
-  filename: (req, file, cb) => {
-    // Generate unique filename
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
-  }
-});
-
 const upload = multer({
-  storage: storage,
+  storage: multer.memoryStorage(),
   limits: {
     fileSize: 50 * 1024 * 1024, // 50MB limit
   },
   fileFilter: (req, file, cb) => {
-    // Allow PDF, DOC, DOCX files
-    const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const allowedTypes = [
+      'application/pdf',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      'application/vnd.ms-excel',
+      'text/plain'
+    ];
+    
     if (allowedTypes.includes(file.mimetype)) {
       cb(null, true);
     } else {
-      cb(new Error('Invalid file type. Only PDF, DOC, and DOCX files are allowed.'));
+      cb(new Error('Invalid file type. Supported types: PDF, Word, Excel, Text'));
     }
   }
 });
 
-// Get all artefacts
-router.get('/', async (req: any, res: any) => {
+// Import document with classification
+router.post('/import', authenticateToken, upload.single('file'), async (req, res) => {
+  console.log('📤 Import request received');
+  console.log('File:', req.file ? `${req.file.originalname} (${req.file.size} bytes)` : 'None');
+  console.log('Body:', req.body);
+  
   try {
-    const artefacts = await Artefact.findAll({
-      include: [
-        { model: User, as: 'owner', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'createdBy', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'lastUpdatedBy', attributes: ['id', 'name', 'email'] }
-      ],
-      order: [['createdAt', 'DESC']]
-    });
+    if (!req.file) {
+      console.log('❌ No file in request');
+      return res.status(400).json({ error: 'No file provided' });
+    }
+
+    const { standard, autoClassify } = req.body;
+    const ownerId = req.user!.id; // Get from authenticated user
+    const organizationId = req.user!.organizationId;
     
-    res.json({ artefacts });
+    if (!standard) {
+      return res.status(400).json({ 
+        error: 'Missing required fields: standard' 
+      });
+    }
+
+    const result = await artefactService.importAndClassifyArtefact({
+      file: req.file,
+      ownerId,
+      organizationId,
+      standard,
+      autoClassify: autoClassify === 'true'
+    });
+
+    res.json({
+      success: true,
+      artefact: result.artefact,
+      mappings: result.mappings,
+      message: `Document imported successfully with ${result.mappings.length} clause mappings`
+    });
+
+  } catch (error) {
+    console.error('Import error:', error);
+    console.error('Stack trace:', error instanceof Error ? error.stack : 'No stack trace');
+    console.error('Error type:', typeof error);
+    console.error('Error constructor:', error?.constructor?.name);
+    if (error instanceof Error) {
+      console.error('Error properties:', Object.getOwnPropertyNames(error));
+    }
+    res.status(500).json({ 
+      error: error instanceof Error ? error.message : 'Failed to import document',
+      details: process.env.NODE_ENV === 'development' ? (error instanceof Error ? error.stack : error) : undefined
+    });
+  }
+});
+
+// Get all artefacts
+router.get('/', authenticateToken, async (req, res) => {
+  try {
+    const artefacts = await artefactService.getAllArtefacts();
+    res.json(artefacts);
   } catch (error) {
     console.error('Error fetching artefacts:', error);
     res.status(500).json({ error: 'Failed to fetch artefacts' });
   }
 });
 
-// Get artefact by ID
-router.get('/:id', async (req, res) => {
+// File proxy endpoint to handle CORS issues
+router.get('/file-proxy', async (req, res) => {
   try {
-    const { id } = req.params;
-    const artefact = await Artefact.findByPk(id, {
-      include: [
-        { model: User, as: 'owner', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'createdBy', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'lastUpdatedBy', attributes: ['id', 'name', 'email'] }
-      ]
+    const { url } = req.query;
+    
+    if (!url || typeof url !== 'string') {
+      return res.status(400).json({ error: 'URL parameter is required' });
+    }
+
+    // Validate URL to prevent SSRF attacks
+    if (!url.startsWith('http://localhost:9000/') && !url.startsWith('https://')) {
+      return res.status(400).json({ error: 'Invalid URL' });
+    }
+
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch file: ${response.status} ${response.statusText}`);
+    }
+
+    // Set appropriate headers
+    res.setHeader('Content-Type', response.headers.get('Content-Type') || 'application/octet-stream');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Stream the response
+    const buffer = await response.arrayBuffer();
+    res.send(Buffer.from(buffer));
+
+  } catch (error) {
+    console.error('File proxy error:', error);
+    res.status(500).json({ 
+      error: error instanceof Error ? error.message : 'Failed to proxy file' 
     });
+  }
+});
+
+// Get artefact by ID with mappings
+router.get('/:id', authenticateToken, async (req, res) => {
+  try {
+    const artefact = await artefactService.getArtefactWithMappings(req.params.id);
     
     if (!artefact) {
       return res.status(404).json({ error: 'Artefact not found' });
     }
-    
-    res.json({ artefact });
+
+    res.json(artefact);
   } catch (error) {
     console.error('Error fetching artefact:', error);
     res.status(500).json({ error: 'Failed to fetch artefact' });
   }
 });
 
-// Create new artefact
-router.post('/', async (req, res) => {
-  try {
-    const { title, type, clause, content, ownerId } = req.body;
-    
-    if (!title || !type || !clause || !content) {
-      return res.status(400).json({ error: 'Missing required fields' });
-    }
-    
-    // For now, use a default user ID if ownerId is not provided
-    // In a real app, this would come from the authenticated user
-    const defaultUserId = 1;
-    
-    const newArtefact = await Artefact.create({
-      title,
-      type,
-      clause,
-      content,
-      ownerId: ownerId || defaultUserId,
-      createdById: ownerId || defaultUserId,
-      lastUpdatedById: ownerId || defaultUserId,
-      version: '1.0',
-      status: 'draft'
-    });
-    
-    // Fetch the created artefact with associations
-    const createdArtefact = await Artefact.findByPk(newArtefact.id, {
-      include: [
-        { model: User, as: 'owner', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'createdBy', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'lastUpdatedBy', attributes: ['id', 'name', 'email'] }
-      ]
-    });
-    
-    res.status(201).json({ artefact: createdArtefact });
-  } catch (error) {
-    console.error('Error creating artefact:', error);
-    res.status(500).json({ error: 'Failed to create artefact' });
-  }
-});
-
 // Update artefact
-router.put('/:id', async (req, res) => {
+router.put('/:id', authenticateToken, async (req, res) => {
   try {
-    const { id } = req.params;
-    const { title, content, status, version } = req.body;
-    
-    const artefact = await Artefact.findByPk(id);
-    
-    if (!artefact) {
-      return res.status(404).json({ error: 'Artefact not found' });
-    }
-    
-    // Update the artefact
-    await artefact.update({
-      ...(title && { title }),
-      ...(content && { content }),
-      ...(status && { status }),
-      ...(version && { version }),
-      lastUpdatedById: 1 // In a real app, this would be the authenticated user ID
-    });
-    
-    // Fetch the updated artefact with associations
-    const updatedArtefact = await Artefact.findByPk(id, {
-      include: [
-        { model: User, as: 'owner', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'createdBy', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'lastUpdatedBy', attributes: ['id', 'name', 'email'] }
-      ]
-    });
-    
-    res.json({ 
-      success: true, 
-      artefact: updatedArtefact,
-      message: 'Artefact updated successfully' 
-    });
+    const { title, description, content, status } = req.body;
+    const userId = req.user!.id;
+
+    const updated = await artefactService.updateArtefact(
+      req.params.id,
+      userId,
+      { title, description, content, status }
+    );
+
+    res.json(updated);
   } catch (error) {
     console.error('Error updating artefact:', error);
-    res.status(500).json({ error: 'Failed to update artefact' });
+    res.status(500).json({ 
+      error: error instanceof Error ? error.message : 'Failed to update artefact' 
+    });
   }
 });
 
-// Delete artefact
-router.delete('/:id', async (req, res) => {
+// Delete artefact (exceptional circumstances)
+router.delete('/:id', authenticateToken, requireRole([UserRole.SUPER_ADMIN, UserRole.ACCOUNT_ADMIN]), async (req, res) => {
   try {
-    const { id } = req.params;
+    const userId = req.user!.id;
     
-    const artefact = await Artefact.findByPk(id);
+    const deleted = await artefactService.deleteArtefact(req.params.id, userId);
     
-    if (!artefact) {
-      return res.status(404).json({ error: 'Artefact not found' });
-    }
-    
-    await artefact.destroy();
-    
-    res.json({ 
-      success: true, 
-      message: 'Artefact deleted successfully' 
+    res.json({
+      success: true,
+      message: 'Artefact deleted successfully',
+      deletedArtefact: deleted
     });
   } catch (error) {
     console.error('Error deleting artefact:', error);
-    res.status(500).json({ error: 'Failed to delete artefact' });
-  }
-});
-
-// Get artefacts by clause
-router.get('/clause/:clause', async (req, res) => {
-  try {
-    const { clause } = req.params;
-    
-    const artefacts = await Artefact.findAll({
-      where: {
-        clause: {
-          [require('sequelize').Op.iLike]: `%${clause}%`
-        }
-      },
-      include: [
-        { model: User, as: 'owner', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'createdBy', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'lastUpdatedBy', attributes: ['id', 'name', 'email'] }
-      ],
-      order: [['createdAt', 'DESC']]
+    res.status(500).json({ 
+      error: error instanceof Error ? error.message : 'Failed to delete artefact' 
     });
-    
-    res.json({ artefacts });
-  } catch (error) {
-    console.error('Error fetching artefacts by clause:', error);
-    res.status(500).json({ error: 'Failed to fetch artefacts by clause' });
   }
 });
 
-// Upload ISO book
-router.post('/upload', upload.single('file'), async (req, res) => {
+// REVIEW ENDPOINTS
+
+// Create a review for an artefact
+router.post('/:id/reviews', authenticateToken, async (req, res) => {
   try {
-    const { title, isoStandard, clause, ownerId } = req.body;
-    const file = req.file;
+    const { status, comments } = req.body;
+    const reviewerId = req.user!.id;
     
-    if (!file) {
-      return res.status(400).json({ error: 'No file uploaded' });
+    if (!status) {
+      return res.status(400).json({ error: 'Review status is required' });
     }
+
+    const review = await artefactService.createReview(
+      req.params.id,
+      reviewerId,
+      status,
+      comments
+    );
+
+    res.status(201).json(review);
+  } catch (error) {
+    console.error('Error creating review:', error);
+    res.status(500).json({ 
+      error: error instanceof Error ? error.message : 'Failed to create review' 
+    });
+  }
+});
+
+// Get reviews for an artefact
+router.get('/:id/reviews', authenticateToken, async (req, res) => {
+  try {
+    const reviews = await artefactService.getArtefactReviews(req.params.id);
+    res.json(reviews);
+  } catch (error) {
+    console.error('Error fetching reviews:', error);
+    res.status(500).json({ error: 'Failed to fetch reviews' });
+  }
+});
+
+// COMMENT ENDPOINTS
+
+// Create a comment on an artefact
+router.post('/:id/comments', authenticateToken, async (req, res) => {
+  try {
+    const { content, parentId } = req.body;
+    const authorId = req.user!.id;
     
-    if (!title || !isoStandard || !clause) {
-      return res.status(400).json({ error: 'Missing required fields: title, isoStandard, clause' });
+    if (!content) {
+      return res.status(400).json({ error: 'Comment content is required' });
     }
+
+    const comment = await artefactService.createComment(
+      req.params.id,
+      authorId,
+      content,
+      parentId
+    );
+
+    res.status(201).json(comment);
+  } catch (error) {
+    console.error('Error creating comment:', error);
+    res.status(500).json({ 
+      error: error instanceof Error ? error.message : 'Failed to create comment' 
+    });
+  }
+});
+
+// Get comments for an artefact
+router.get('/:id/comments', authenticateToken, async (req, res) => {
+  try {
+    const comments = await artefactService.getArtefactComments(req.params.id);
+    res.json(comments);
+  } catch (error) {
+    console.error('Error fetching comments:', error);
+    res.status(500).json({ error: 'Failed to fetch comments' });
+  }
+});
+
+// TASK ENDPOINTS
+
+// Create a task for an artefact
+router.post('/:id/tasks', authenticateToken, async (req, res) => {
+  try {
+    const { title, description, dueDate, priority, assigneeId } = req.body;
+    const createdById = req.user!.id;
     
-    // Validate ISO standard
-    const validStandards = ['ISO 9001:2015', 'ISO 27001:2022'];
-    if (!validStandards.includes(isoStandard)) {
-      return res.status(400).json({ error: 'Invalid ISO standard. Must be ISO 9001:2015 or ISO 27001:2022' });
+    if (!title) {
+      return res.status(400).json({ error: 'Task title is required' });
     }
-    
-    // For now, use a default user ID if ownerId is not provided
-    const defaultUserId = 1;
-    
-    const newArtefact = await Artefact.create({
+
+    const task = await artefactService.createTask(
+      req.params.id,
+      createdById,
       title,
-      type: 'iso-book',
-      clause,
-      content: `ISO Book: ${title} - ${isoStandard}`,
-      ownerId: ownerId || defaultUserId,
-      createdById: ownerId || defaultUserId,
-      lastUpdatedById: ownerId || defaultUserId,
-      version: '1.0',
-      status: 'draft',
-      fileName: file.originalname,
-      filePath: file.path,
-      fileSize: file.size,
-      fileType: file.mimetype,
-      isoStandard
-    });
-    
-    // Fetch the created artefact with associations
-    const createdArtefact = await Artefact.findByPk(newArtefact.id, {
-      include: [
-        { model: User, as: 'owner', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'createdBy', attributes: ['id', 'name', 'email'] },
-        { model: User, as: 'lastUpdatedBy', attributes: ['id', 'name', 'email'] }
-      ]
-    });
-    
-    res.status(201).json({ 
-      artefact: createdArtefact,
-      message: 'ISO book uploaded successfully'
-    });
+      description,
+      dueDate,
+      priority,
+      assigneeId
+    );
+
+    res.status(201).json(task);
   } catch (error) {
-    console.error('Error uploading ISO book:', error);
-    res.status(500).json({ error: 'Failed to upload ISO book' });
+    console.error('Error creating task:', error);
+    res.status(500).json({ 
+      error: error instanceof Error ? error.message : 'Failed to create task' 
+    });
   }
 });
 
-// Download file
-router.get('/:id/download', async (req, res) => {
+// Get tasks for an artefact
+router.get('/:id/tasks', authenticateToken, async (req, res) => {
   try {
-    const { id } = req.params;
-    
-    const artefact = await Artefact.findByPk(id);
-    
-    if (!artefact) {
-      return res.status(404).json({ error: 'Artefact not found' });
-    }
-    
-    if (!artefact.filePath || !artefact.fileName) {
-      return res.status(404).json({ error: 'No file associated with this artefact' });
-    }
-    
-    // Check if file exists
-    if (!fs.existsSync(artefact.filePath)) {
-      return res.status(404).json({ error: 'File not found on server' });
-    }
-    
-    // Set headers for file download
-    res.setHeader('Content-Type', artefact.fileType || 'application/octet-stream');
-    res.setHeader('Content-Disposition', `attachment; filename="${artefact.fileName}"`);
-    
-    // Stream the file
-    const fileStream = fs.createReadStream(artefact.filePath);
-    fileStream.pipe(res);
+    const tasks = await artefactService.getArtefactTasks(req.params.id);
+    res.json(tasks);
   } catch (error) {
-    console.error('Error downloading file:', error);
-    res.status(500).json({ error: 'Failed to download file' });
+    console.error('Error fetching tasks:', error);
+    res.status(500).json({ error: 'Failed to fetch tasks' });
   }
 });
 
-export const artefactRoutes = router; 
+// Update task status
+router.put('/tasks/:taskId', authenticateToken, async (req, res) => {
+  try {
+    const { status, completedAt } = req.body;
+    const userId = req.user!.id;
+
+    const task = await artefactService.updateTask(
+      req.params.taskId,
+      userId,
+      { status, completedAt }
+    );
+
+    res.json(task);
+  } catch (error) {
+    console.error('Error updating task:', error);
+    res.status(500).json({ 
+      error: error instanceof Error ? error.message : 'Failed to update task' 
+    });
+  }
+});
+
+export default router;

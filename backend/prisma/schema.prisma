@@ -1,0 +1,416 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Organization {
+  id          String                @id @default(cuid())
+  name        String
+  slug        String                @unique
+  description String?
+  website     String?
+  industry    String?
+  size        String?
+  isActive    Boolean               @default(true)
+  createdAt   DateTime              @default(now())
+  updatedAt   DateTime              @updatedAt
+  artefacts   Artefact[]
+  settings    OrganizationSettings?
+  users       User[]
+
+  @@index([slug])
+  @@index([isActive])
+}
+
+model OrganizationSettings {
+  id                    String         @id @default(cuid())
+  organizationId        String         @unique
+  enabledStandards      StandardType[]
+  enableAIAgents        Boolean        @default(true)
+  enableReports         Boolean        @default(true)
+  enableAuditLogs       Boolean        @default(true)
+  enforcePasswordPolicy Boolean        @default(true)
+  require2FA            Boolean        @default(false)
+  sessionTimeout        Int            @default(1440)
+  maxFileSize           Int            @default(50)
+  maxTotalStorage       Int            @default(1000)
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+  organization          Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id                String             @id @default(cuid())
+  email             String             @unique
+  name              String
+  password          String
+  role              UserRole           @default(USER)
+  isActive          Boolean            @default(true)
+  lastLogin         DateTime?
+  twoFactorEnabled  Boolean            @default(false)
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  organizationId    String?
+  ownedArtefacts    Artefact[]         @relation("ArtefactOwner")
+  artefactVersions  ArtefactVersion[]
+  auditLogs         AuditLog[]
+  clauseAssignments ClauseAssignment[]
+  comments          Comment[]
+  events            Event[]
+  reviews           Review[]
+  tasks             Task[]             @relation("TaskAssignee")
+  createdTasks      Task[]             @relation("TaskCreator")
+  taskAssignments   TaskAssignee[]
+  organization      Organization?      @relation(fields: [organizationId], references: [id])
+
+  @@index([organizationId])
+  @@index([role])
+  @@index([isActive])
+}
+
+model AIAgent {
+  id                String             @id @default(cuid())
+  name              String
+  type              AgentType
+  description       String
+  isActive          Boolean            @default(true)
+  config            Json
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  suggestions       AISuggestion[]
+  auditLogs         AuditLog[]
+  clauseAssignments ClauseAssignment[]
+  tasks             Task[]
+}
+
+model Artefact {
+  id             String            @id @default(cuid())
+  title          String
+  description    String?
+  currentVersion Int               @default(1)
+  status         ArtefactStatus    @default(DRAFT)
+  fileUrl        String?
+  metadata       Json?
+  ownerId        String
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+  organizationId String?
+  documentType   DocumentType?     @default(DOCUMENT)
+  parentId       String?           // For hierarchical relationships
+  organization   Organization?     @relation(fields: [organizationId], references: [id])
+  owner          User              @relation("ArtefactOwner", fields: [ownerId], references: [id])
+  parent         Artefact?         @relation("DocumentHierarchy", fields: [parentId], references: [id])
+  children       Artefact[]        @relation("DocumentHierarchy")
+  versions       ArtefactVersion[]
+  clauseMappings ClauseMapping[]
+  comments       Comment[]
+  reviews        Review[]
+  tasks          Task[]
+  // Cross-references between documents
+  referencedBy   DocumentReference[] @relation("ReferencingDocument")
+  references     DocumentReference[] @relation("ReferencedDocument")
+
+  @@index([ownerId])
+  @@index([organizationId])
+  @@index([parentId])
+  @@index([documentType])
+}
+
+model ArtefactVersion {
+  id          String   @id @default(cuid())
+  artefactId  String
+  version     Int
+  content     String
+  fileUrl     String?
+  changes     String?
+  createdById String
+  createdAt   DateTime @default(now())
+  artefact    Artefact @relation(fields: [artefactId], references: [id], onDelete: Cascade)
+  createdBy   User     @relation(fields: [createdById], references: [id])
+
+  @@unique([artefactId, version])
+  @@index([artefactId])
+}
+
+model ISOClause {
+  id                String            @id @default(cuid())
+  standard          StandardType
+  clauseNumber      String
+  title             String
+  description       String?
+  parentId          String?
+  clauseAssignments ClauseAssignment?
+  clauseMappings    ClauseMapping[]
+  parent            ISOClause?        @relation("ClauseHierarchy", fields: [parentId], references: [id])
+  children          ISOClause[]       @relation("ClauseHierarchy")
+
+  @@unique([standard, clauseNumber])
+  @@index([standard])
+}
+
+model ClauseMapping {
+  id         String    @id @default(cuid())
+  artefactId String
+  clauseId   String
+  confidence Float     @default(1.0)
+  keywords   String[]
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  artefact   Artefact  @relation(fields: [artefactId], references: [id], onDelete: Cascade)
+  clause     ISOClause @relation(fields: [clauseId], references: [id])
+
+  @@unique([artefactId, clauseId])
+  @@index([artefactId])
+  @@index([clauseId])
+}
+
+model ClauseAssignment {
+  id        String    @id @default(cuid())
+  clauseId  String    @unique
+  userId    String?
+  agentId   String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  agent     AIAgent?  @relation(fields: [agentId], references: [id])
+  clause    ISOClause @relation(fields: [clauseId], references: [id])
+  user      User?     @relation(fields: [userId], references: [id])
+
+  @@index([userId])
+  @@index([agentId])
+}
+
+model Task {
+  id          String     @id @default(cuid())
+  title       String
+  description String?
+  dueDate     DateTime?
+  status      TaskStatus @default(PENDING)
+  priority    Int        @default(2)
+  assigneeId  String?
+  agentId     String?
+  createdById String
+  artefactId  String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  completedAt DateTime?
+  agent       AIAgent?   @relation(fields: [agentId], references: [id])
+  artefact    Artefact?  @relation(fields: [artefactId], references: [id])
+  assignee    User?      @relation("TaskAssignee", fields: [assigneeId], references: [id])
+  createdBy   User       @relation("TaskCreator", fields: [createdById], references: [id])
+  assignees   TaskAssignee[]
+
+  @@index([assigneeId])
+  @@index([status])
+  @@index([dueDate])
+}
+
+model TaskAssignee {
+  id         String   @id @default(cuid())
+  taskId     String
+  userId     String
+  assignedAt DateTime @default(now())
+  task       Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id])
+
+  @@unique([taskId, userId])
+  @@index([taskId])
+  @@index([userId])
+}
+
+model Event {
+  id           String    @id @default(cuid())
+  type         EventType
+  title        String
+  description  String
+  severity     Int       @default(2)
+  reportedById String
+  metadata     Json?
+  status       String    @default("OPEN")
+  resolution   String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  closedAt     DateTime?
+  reportedBy   User      @relation(fields: [reportedById], references: [id])
+
+  @@index([type])
+  @@index([status])
+  @@index([reportedById])
+}
+
+model AISuggestion {
+  id          String    @id @default(cuid())
+  agentId     String
+  type        String
+  title       String
+  content     String
+  rationale   String?
+  status      String    @default("PENDING")
+  metadata    Json?
+  reviewedBy  String?
+  reviewNotes String?
+  createdAt   DateTime  @default(now())
+  reviewedAt  DateTime?
+  agent       AIAgent   @relation(fields: [agentId], references: [id])
+
+  @@index([agentId])
+  @@index([status])
+}
+
+model Review {
+  id         String   @id @default(cuid())
+  artefactId String
+  reviewerId String
+  status     String
+  comments   String?
+  createdAt  DateTime @default(now())
+  artefact   Artefact @relation(fields: [artefactId], references: [id])
+  reviewer   User     @relation(fields: [reviewerId], references: [id])
+
+  @@index([artefactId])
+  @@index([reviewerId])
+}
+
+model Comment {
+  id         String    @id @default(cuid())
+  content    String
+  artefactId String
+  authorId   String
+  parentId   String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  artefact   Artefact  @relation(fields: [artefactId], references: [id])
+  author     User      @relation(fields: [authorId], references: [id])
+  parent     Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
+  replies    Comment[] @relation("CommentReplies")
+
+  @@index([artefactId])
+  @@index([authorId])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  action     String
+  entityType String
+  entityId   String
+  userId     String?
+  agentId    String?
+  details    Json?
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime @default(now())
+  agent      AIAgent? @relation(fields: [agentId], references: [id])
+  user       User?    @relation(fields: [userId], references: [id])
+
+  @@index([entityType, entityId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model StandardDocument {
+  id               String       @id @default(cuid())
+  standard         StandardType
+  title            String
+  category         String       // Required or Optional
+  description      String
+  clauseRef        String?      // Reference to specific clause like "5.2" or "6.2"
+  importance       String?      // Why it's important
+  keywords         String[]     // Keywords for fuzzy matching
+  clauseNumbers    String[]     // All relevant clause numbers for this document
+  documentType     DocumentType @default(DOCUMENT) // Type of document
+  canBeFulfilledBy String[]     // Other standard document titles that can fulfill this requirement
+  fulfills         String[]     // Other standard document titles this document fulfills
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  @@unique([standard, title])
+  @@index([standard])
+  @@index([category])
+  @@index([documentType])
+}
+
+model DocumentReference {
+  id                   String   @id @default(cuid())
+  referencingDocumentId String
+  referencedDocumentId String
+  referenceType        ReferenceType
+  description          String?  // Why/how they're related
+  createdAt            DateTime @default(now())
+  createdBy            String?
+  referencingDocument  Artefact @relation("ReferencingDocument", fields: [referencingDocumentId], references: [id], onDelete: Cascade)
+  referencedDocument   Artefact @relation("ReferencedDocument", fields: [referencedDocumentId], references: [id], onDelete: Cascade)
+
+  @@unique([referencingDocumentId, referencedDocumentId, referenceType])
+  @@index([referencingDocumentId])
+  @@index([referencedDocumentId])
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  ACCOUNT_ADMIN
+  USER
+}
+
+enum ArtefactStatus {
+  DRAFT
+  UNDER_REVIEW
+  APPROVED
+  ARCHIVED
+}
+
+enum AgentType {
+  DOCUMENT_REVIEWER
+  RISK_ASSESSOR
+  COMPLIANCE_CHECKER
+  TASK_MANAGER
+  REPORT_GENERATOR
+}
+
+enum TaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  OVERDUE
+  CANCELLED
+}
+
+enum StandardType {
+  ISO_9001_2015
+  ISO_27001_2022
+  ISO_27001_2013
+}
+
+enum EventType {
+  NONCONFORMITY
+  COMPLAINT
+  RISK
+  INCIDENT
+  TRAINING
+  AUDIT
+  MANAGEMENT_REVIEW
+}
+
+enum DocumentType {
+  DOCUMENT          // Regular document
+  POLICY            // High-level policy document
+  PROCEDURE         // Step-by-step procedure
+  MANUAL            // Comprehensive manual covering multiple areas
+  FORM              // Form or template
+  RECORD            // Record of activities/evidence
+  PLAN              // Planning document
+  LOG               // Log or register
+  REPORT            // Report document
+}
+
+enum ReferenceType {
+  IMPLEMENTS        // Document implements another (e.g., procedure implements policy)
+  REFERENCES        // Document references another
+  SUPERSEDES        // Document replaces another
+  SUPPORTS          // Document supports another
+  DERIVED_FROM      // Document is derived from another
+  PARENT_CHILD      // Hierarchical relationship
+  CROSS_REFERENCE   // General cross-reference
+}

@@ -1,64 +1,361 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import { PrismaClient, UserRole } from '@prisma/client';
+import { authenticateToken, requireSuperAdmin, requireAccountAdmin } from '../middleware/auth';
+import { z } from 'zod';
 
 const router = Router();
+const prisma = new PrismaClient();
 
-// Login endpoint
+// Validation schemas
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(1)
+});
+
+const registerSchema = z.object({
+  email: z.string().email(),
+  name: z.string().min(1),
+  password: z.string().min(8),
+  organizationId: z.string().optional()
+});
+
+const createOrganizationSchema = z.object({
+  name: z.string().min(1),
+  slug: z.string().min(1),
+  description: z.string().optional(),
+  website: z.string().url().optional(),
+  industry: z.string().optional(),
+  size: z.string().optional(),
+  adminEmail: z.string().email(),
+  adminName: z.string().min(1),
+  adminPassword: z.string().min(8)
+});
+
+// Helper function to generate JWT token
+const generateToken = (userId: string) => {
+  return jwt.sign({ userId }, process.env.JWT_SECRET!, { expiresIn: '24h' });
+};
+
+// Public routes
 router.post('/login', async (req, res) => {
   try {
-    const { email, password } = req.body;
-    
-    // TODO: Implement actual authentication logic
-    // For MVP, return mock response
+    const { email, password } = loginSchema.parse(req.body);
+
+    const user = await prisma.user.findUnique({
+      where: { email },
+      include: {
+        organization: true
+      }
+    });
+
+    if (!user || !user.isActive) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    // Check if organization is active (except for SUPER_ADMIN)
+    if (user.role !== UserRole.SUPER_ADMIN && user.organization && !user.organization.isActive) {
+      return res.status(403).json({ error: 'Organization is inactive' });
+    }
+
+    const isValidPassword = await bcrypt.compare(password, user.password);
+    if (!isValidPassword) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    const token = generateToken(user.id);
+
     res.json({
-      success: true,
+      token,
       user: {
-        id: 1,
-        email,
-        role: 'admin',
-        name: 'Admin User'
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        organizationId: user.organizationId,
+        organization: user.organization ? {
+          id: user.organization.id,
+          name: user.organization.name,
+          slug: user.organization.slug
+        } : null
+      }
+    });
+  } catch (error) {
+    console.error('Login error:', error);
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ error: 'Invalid input', details: error.errors });
+    }
+    res.status(500).json({ error: 'Login failed' });
+  }
+});
+
+// Super admin only: Create new organization with admin user
+router.post('/organizations', requireSuperAdmin, async (req: Request, res: Response) => {
+  try {
+    const data = createOrganizationSchema.parse(req.body);
+
+    // Check if organization slug is unique
+    const existingOrg = await prisma.organization.findUnique({
+      where: { slug: data.slug }
+    });
+
+    if (existingOrg) {
+      return res.status(400).json({ error: 'Organization slug already exists' });
+    }
+
+    // Check if admin email is unique
+    const existingUser = await prisma.user.findUnique({
+      where: { email: data.adminEmail }
+    });
+
+    if (existingUser) {
+      return res.status(400).json({ error: 'Admin email already exists' });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(data.adminPassword, 10);
+
+    // Create organization with admin user and default settings
+    const result = await prisma.$transaction(async (tx) => {
+      const organization = await tx.organization.create({
+        data: {
+          name: data.name,
+          slug: data.slug,
+          description: data.description,
+          website: data.website,
+          industry: data.industry,
+          size: data.size
+        }
+      });
+
+      await tx.organizationSettings.create({
+        data: {
+          organizationId: organization.id,
+          enabledStandards: ['ISO_9001_2015', 'ISO_27001_2022']
+        }
+      });
+
+      const admin = await tx.user.create({
+        data: {
+          email: data.adminEmail,
+          name: data.adminName,
+          password: hashedPassword,
+          role: UserRole.ACCOUNT_ADMIN,
+          organizationId: organization.id
+        }
+      });
+
+      return { organization, admin };
+    });
+
+    res.status(201).json({
+      organization: result.organization,
+      admin: {
+        id: result.admin.id,
+        email: result.admin.email,
+        name: result.admin.name,
+        role: result.admin.role
+      }
+    });
+  } catch (error) {
+    console.error('Create organization error:', error);
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ error: 'Invalid input', details: error.errors });
+    }
+    res.status(500).json({ error: 'Failed to create organization' });
+  }
+});
+
+// Account admin only: Create new user within their organization
+router.post('/users', authenticateToken, requireAccountAdmin, async (req: Request, res: Response) => {
+  try {
+    const data = registerSchema.parse(req.body);
+
+    // Account admins can only create users in their own organization
+    const organizationId = req.user!.role === UserRole.SUPER_ADMIN 
+      ? data.organizationId 
+      : req.user!.organizationId;
+
+    if (!organizationId) {
+      return res.status(400).json({ error: 'Organization ID required' });
+    }
+
+    // Check if email is unique
+    const existingUser = await prisma.user.findUnique({
+      where: { email: data.email }
+    });
+
+    if (existingUser) {
+      return res.status(400).json({ error: 'Email already exists' });
+    }
+
+    // Hash password
+    const hashedPassword = await bcrypt.hash(data.password, 10);
+
+    const user = await prisma.user.create({
+      data: {
+        email: data.email,
+        name: data.name,
+        password: hashedPassword,
+        role: UserRole.USER,
+        organizationId
       },
-      token: 'mock-jwt-token'
+      include: {
+        organization: true
+      }
+    });
+
+    res.status(201).json({
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        organizationId: user.organizationId,
+        organization: user.organization
+      }
     });
   } catch (error) {
-    res.status(500).json({ error: 'Authentication failed' });
+    console.error('Create user error:', error);
+    if (error instanceof z.ZodError) {
+      return res.status(400).json({ error: 'Invalid input', details: error.errors });
+    }
+    res.status(500).json({ error: 'Failed to create user' });
   }
 });
 
-// Register endpoint
-router.post('/register', async (req, res) => {
+// Get current user profile
+router.get('/profile', authenticateToken, async (req: Request, res: Response) => {
   try {
-    const { email, password, name, role } = req.body;
+    const user = await prisma.user.findUnique({
+      where: { id: req.user!.id },
+      include: {
+        organization: true
+      }
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    res.json({
+      user: {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        organizationId: user.organizationId,
+        organization: user.organization,
+        lastLogin: user.lastLogin,
+        twoFactorEnabled: user.twoFactorEnabled
+      }
+    });
+  } catch (error) {
+    console.error('Profile error:', error);
+    res.status(500).json({ error: 'Failed to get profile' });
+  }
+});
+
+// Get users (filtered by organization for non-super-admins)
+router.get('/users', authenticateToken, requireAccountAdmin, async (req: Request, res: Response) => {
+  try {
+    const { page = 1, limit = 10, search } = req.query;
+    const skip = (Number(page) - 1) * Number(limit);
+
+    const where: any = {};
     
-    // TODO: Implement actual registration logic
+    // Super admins can see all users, account admins only see their org users
+    if (req.user!.role !== UserRole.SUPER_ADMIN) {
+      where.organizationId = req.user!.organizationId;
+    }
+
+    if (search) {
+      where.OR = [
+        { name: { contains: search as string, mode: 'insensitive' } },
+        { email: { contains: search as string, mode: 'insensitive' } }
+      ];
+    }
+
+    const [users, total] = await Promise.all([
+      prisma.user.findMany({
+        where,
+        skip,
+        take: Number(limit),
+        include: {
+          organization: true
+        },
+        orderBy: { createdAt: 'desc' }
+      }),
+      prisma.user.count({ where })
+    ]);
+
     res.json({
-      success: true,
-      user: {
-        id: 1,
-        email,
-        name,
-        role: role || 'contributor'
+      users: users.map(user => ({
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        role: user.role,
+        isActive: user.isActive,
+        organizationId: user.organizationId,
+        organization: user.organization,
+        lastLogin: user.lastLogin,
+        createdAt: user.createdAt
+      })),
+      pagination: {
+        page: Number(page),
+        limit: Number(limit),
+        total,
+        totalPages: Math.ceil(total / Number(limit))
       }
     });
   } catch (error) {
-    res.status(500).json({ error: 'Registration failed' });
+    console.error('Get users error:', error);
+    res.status(500).json({ error: 'Failed to get users' });
   }
 });
 
-// Get current user
-router.get('/me', async (req, res) => {
+// Toggle user active status
+router.put('/users/:userId/toggle-active', authenticateToken, requireAccountAdmin, async (req: Request, res: Response) => {
   try {
-    // TODO: Implement JWT verification
+    const { userId } = req.params;
+
+    const user = await prisma.user.findUnique({
+      where: { id: userId }
+    });
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    // Check permissions
+    if (req.user!.role !== UserRole.SUPER_ADMIN && user.organizationId !== req.user!.organizationId) {
+      return res.status(403).json({ error: 'Access denied' });
+    }
+
+    // Can't deactivate yourself
+    if (user.id === req.user!.id) {
+      return res.status(400).json({ error: 'Cannot deactivate yourself' });
+    }
+
+    const updatedUser = await prisma.user.update({
+      where: { id: userId },
+      data: { isActive: !user.isActive }
+    });
+
     res.json({
       user: {
-        id: 1,
-        email: 'admin@example.com',
-        role: 'admin',
-        name: 'Admin User'
+        id: updatedUser.id,
+        email: updatedUser.email,
+        name: updatedUser.name,
+        role: updatedUser.role,
+        isActive: updatedUser.isActive
       }
     });
   } catch (error) {
-    res.status(401).json({ error: 'Unauthorized' });
+    console.error('Toggle user active error:', error);
+    res.status(500).json({ error: 'Failed to toggle user status' });
   }
 });
 
-export const authRoutes = router; 
+export default router;

@@ -1,0 +1,495 @@
+
+> agentic-iso-frontend@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+   ▲ Next.js 14.1.0
+   - Local:        http://localhost:3002
+   - Environments: .env.local
+
+npm error code ENOWORKSPACES
+npm error This command does not support workspaces.
+npm error A complete log of this run can be found in: /Users/jasontaylor/.npm/_logs/2025-07-14T22_43_58_532Z-debug-0.log
+ ✓ Ready in 1136ms
+(node:58231) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:58231) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+ ○ Compiling / ...
+ ✓ Compiled / in 1643ms (555 modules)
+ ✓ Compiled in 109ms (281 modules)
+ ✓ Compiled in 520ms (532 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/server-development/3.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/server-development/3.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/6.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/6.pack.gz'
+ ✓ Compiled in 90ms (281 modules)
+ ✓ Compiled in 61ms (532 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/0.pack.gz'
+ ✓ Compiled in 76ms (281 modules)
+ ✓ Compiled in 44ms (532 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/0.pack.gz'
+ ✓ Compiled in 109ms (281 modules)
+ ✓ Compiled in 79ms (546 modules)
+ ✓ Compiled in 87ms (281 modules)
+ ✓ Compiled in 302ms (577 modules)
+ ✓ Compiled in 124ms (591 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/0.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/server-development/0.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/server-development/0.pack.gz'
+ ✓ Compiled /not-found in 120ms (582 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled /events in 101ms (588 modules)
+ ✓ Compiled /ai-center in 92ms (594 modules)
+ ✓ Compiled /calendar in 135ms (617 modules)
+Failed to proxy http://localhost:3001/api/artefacts AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+Failed to proxy http://localhost:3001/api/health AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+Failed to proxy http://localhost:3001/api/artefacts AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+ ✓ Compiled /_error in 455ms (769 modules)
+ ✓ Compiled /not-found in 63ms (774 modules)
+ ✓ Compiled /calendar in 52ms (351 modules)
+Failed to proxy http://localhost:3001/api/artefacts AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+Failed to proxy http://localhost:3001/api/artefacts AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+Failed to proxy http://localhost:3001/api/health AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1128:18)
+    at afterConnectMultiple (node:net:1693:7)
+    at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3001
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3001
+        at createConnectionError (node:net:1656:14)
+        at afterConnectMultiple (node:net:1686:16)
+        at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:130:17) {
+      errno: -61,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3001
+    }
+  ]
+}
+ ✓ Compiled /onboarding in 167ms (791 modules)
+ ✓ Compiled in 140ms (449 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/2.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/2.pack.gz'
+ ✓ Compiled in 64ms (449 modules)
+ ✓ Compiled in 139ms (786 modules)
+ ✓ Compiled in 102ms (800 modules)
+ ✓ Compiled in 132ms (449 modules)
+ ✓ Compiled /not-found in 72ms (791 modules)
+ ✓ Compiled in 89ms (451 modules)
+ ✓ Compiled in 91ms (451 modules)
+ ✓ Compiled /_error in 211ms (793 modules)
+ ✓ Compiled in 154ms (793 modules)
+ ✓ Compiled in 170ms (449 modules)
+ ✓ Compiled in 257ms (786 modules)
+ ✓ Compiled in 153ms (786 modules)
+ ✓ Compiled in 147ms (449 modules)
+ ✓ Compiled in 93ms (449 modules)
+ ✓ Compiled in 273ms (800 modules)
+ ⚠ ./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+
+./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+ ⚠ ./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+
+./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/server-development/1.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/server-development/1.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/2.pack.gz_' -> '/Users/jasontaylor/ISO-13-JUL/agentic-iso/frontend/.next/cache/webpack/client-development/2.pack.gz'
+ ⚠ ./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+
+./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+ ⚠ ./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+
+./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+ ⚠ ./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+
+./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+ ⚠ ./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+
+./src/components/RichTextEditor.tsx
+Attempted import error: '@tiptap/extension-table' does not contain a default export (imported as 'Table').
+
+Import trace for requested module:
+./src/components/RichTextEditor.tsx
+./src/components/DocumentView.tsx
+./src/app/page.tsx
+ ✓ Compiled in 190ms (824 modules)
+ ✓ Compiled in 205ms (854 modules)
+ ✓ Compiled in 166ms (854 modules)
+ ✓ Compiled in 450ms (846 modules)
+ ✓ Compiled in 152ms (846 modules)
